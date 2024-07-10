@@ -9,23 +9,18 @@ const port = process.env.PORT || 3000;
 
 dotenv.config();
 
-// CORS configuration
-// console.log('Before CORS configuration');
-// const corsOptions = {
-//   origin: 'http://localhost:5173',
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-//   credentials: true,
-//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-// };
-// console.log('CORS options:', corsOptions);
-
-// console.log('After CORS configuration');
+const corsOptions = {
+  origin: ['https://urban-next-frontend.vercel.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+};
 
 // Other middleware
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // app.get('/test-cors', (req, res) => {
 //   console.log('Test CORS route accessed');
