@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 dotenv.config();
 
 const corsOptions = {
-  origin: ['https://urban-next-frontend.vercel.app', 'http://localhost:5173'],
+  origin: ['https://urban-next-realty.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
